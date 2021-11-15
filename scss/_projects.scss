@@ -1,0 +1,70 @@
+.project {
+    display: flex;
+    max-width: $max-width;
+    gap: 70px;
+    margin: 0 auto;
+    padding: clamp(10px, 60px, 5vw) 0;
+    align-items: center;
+
+    &__picture, &__info {
+        flex-grow: 1;
+    }
+
+    &__picture {
+        flex-basis: 55%;
+    }
+
+    &__picture img {
+        width: 100%;
+    }
+
+    &__picture--left img {
+        box-shadow: -200px -60px 0px $primary;
+    }
+
+    &__picture--right img {
+        box-shadow: 200px -60px 0px $secondary;
+    }
+
+    &__info {
+        flex-basis: 45%;
+
+        h4 {
+            margin: 0;
+        }
+        h2 {
+            margin-top: 5px;
+            margin-bottom: 20px;
+        }
+        p {
+            font-size: 1.1rem;
+            line-height: 2;
+            margin-bottom: 20px;
+        }
+    }
+
+    .button {
+        @include button;
+    }
+
+    &__location {
+        display: inline-flex;
+        margin-top: 25px;
+        font-style: italic;
+        align-items: center;
+        gap: 10px;
+    }
+
+    @media screen and (max-width: $md) {
+        flex-direction: column;
+        text-align: center;
+
+        .learn-more {
+            margin: 0 auto;
+        }
+
+        &__picture img {
+            box-shadow: none;
+        }
+    }
+}

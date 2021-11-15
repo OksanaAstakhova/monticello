@@ -1,0 +1,115 @@
+.news {
+    background-image: url(../img/news-bg.png),
+        linear-gradient(45deg, $secondary, $primary);
+    background-position: bottom;
+    background-size: cover;
+    padding-bottom: clamp(10px, 30px, 2vw);
+
+    &__img {
+        display: flex;
+
+        img {
+            width: 100%;
+        }
+    }
+    
+    &__content {
+        background-color: $white;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+        justify-content: space-between;
+
+        h5 {
+            margin-top: 0;
+            margin-bottom: 10px;
+            font-family: "Gotham";
+            font-weight: 700;
+            font-size: 1.25rem;
+            line-height: 1.5;
+        }
+
+        p {
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+            line-height: 1.5;
+        }
+    }
+
+    .slider-wrapper {
+        padding: 0 60px;
+    }
+
+    .slick-slider {
+        margin: 0 auto 60px auto;
+        max-width: $max-width;
+        align-items: center;
+        position: relative;
+
+        .slider__item {
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            margin: 0 12px;
+        }
+
+        .slick-arrow {
+            position: absolute;
+            font-size: 0;
+            background-image: url(../img/svg/arrow.svg);
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-color: transparent;
+            width: 32px;
+            height: 32px;
+            @include circle;
+
+            &:hover {
+                background-image: url(../img/svg/arrow-hover.svg);
+                border-color: $light-grey;
+            }
+        }
+        .slick-prev {
+            transform: rotate(180deg) translateY(50%);
+            left: -32px;
+            top: 50%;
+        }
+
+        .slick-next {
+            transform: translateY(-50%);
+            right: -32px;
+            top: 50%;
+        }
+
+        .slick-dots {
+            bottom: -50px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    }
+}
+
+.author {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    
+    img {
+        border-radius: 50%;
+    }
+    &__name,
+    &__date {
+        display: block;
+        font-family: "Gotham Book";
+    }
+    &__name {
+        font-size: 1.1rem;
+        text-transform: uppercase;
+        margin-bottom: 7px;
+    }
+    &__date {
+        font-size: 0.875rem;
+        color: $primary;
+    }
+}

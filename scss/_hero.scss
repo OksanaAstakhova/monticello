@@ -1,0 +1,99 @@
+.hero {
+    display: flex;
+
+    &__content {
+        position: relative;
+        z-index: 10;
+        color: $white;
+    }
+
+    h1,
+    h3 {
+        text-align: center;
+    }
+
+    h3 {
+        letter-spacing: 0.3rem;
+        line-height: 1.5;
+    }
+
+    &__scroll {
+        display: flex;
+        position: absolute;
+        @include circle;
+        bottom: clamp(10px, 50px, 4vw);
+        left: 50%;
+        transform: translateX(-50%) rotate(90deg);
+        background: none;
+        transition: all $transition-time;
+
+        svg {
+            fill: $white;
+        }
+
+        &:hover {
+            border-color: $light-grey;
+
+            svg {
+                fill: $light-grey;
+            }
+        }
+    }
+}
+
+.hero__slider {
+    display: flex;
+    width: 100%;
+
+    &,
+    .slick-list {
+        display: flex;
+        min-width: 0;
+    }
+
+    .slider__item--slide-1 {
+        background-image: url(../img/hero1.jpg);
+    }
+    .slider__item--slide-2 {
+        background-image: url(../img/hero2.jpeg);
+    }
+    .slider__item--slide-3 {
+        background-image: url(../img/hero3.jpeg);
+    }
+    .slider__item--slide-4 {
+        background-image: url(../img/hero4.jpeg);
+    }
+    .slider__item--slide-5 {
+        background-image: url(../img/hero5.jpeg);
+    }
+
+    .slider__item {
+        min-width: 100%;
+        background-size: cover;
+        background-position-x: center;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0 10px;
+
+        &::after {
+            content: "";
+            position: absolute;
+            z-index: 1;
+            background-image: linear-gradient(45deg, $primary, $secondary);
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.9;
+        }
+    }
+
+    .slick-dots {
+        right: clamp(10px, 30px, 2vw);
+        top: 50%;
+        transform: translateY(-50%);
+        flex-direction: column;
+    }
+}

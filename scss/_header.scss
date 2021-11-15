@@ -1,0 +1,144 @@
+.header {
+    position: absolute;
+    z-index: 5;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: clamp(10px, 58px, 5vw) 10px 0 10px;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: $max-width;
+}
+.nav {
+    display: flex;
+    flex-grow: 1;
+
+    &__menu {
+        display: flex;
+        flex-grow: 1;
+        align-items: center;
+        list-style: none;
+        justify-content: space-evenly;
+    }
+
+    &__link {
+        background: none;
+        border: none;
+        color: inherit;
+        font-family: "Gotham Book";
+        color: $white;
+        font-size: 0.875rem;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        transition: all $transition-time;
+
+        &::before {
+            content: "";
+            @include dots;
+            vertical-align: middle;
+            transition: all $transition-time;
+        }
+
+        &:hover {
+            color: $light-grey;
+
+            &::before {
+                border-color: $light-grey;
+            }
+        }
+    }
+}
+.social {
+    display: flex;
+    gap: 10px;
+    &__link {
+        display: flex;
+        @include circle;
+        transition: all $transition-time;
+
+        svg {
+            fill: $white;
+        }
+        &:hover {
+            border-color: $light-grey;
+
+            svg {
+                fill: $light-grey;
+            }
+        }
+    }
+}
+
+.menu {
+    display: flex;
+    flex-grow: 1;
+    transition: all $transition-time;
+
+    &.menu--open {
+        left: 0;
+    }
+}
+
+.burger {
+    display: none;
+    top: 10px;
+    right: 10px;
+    width: 50px;
+    height: 50px;
+    padding: 7px 5px;
+    cursor: pointer;
+    flex-direction: column;
+    justify-content: center;
+    gap: 6px;
+    align-items: stretch;
+    background: none;
+    @include circle;
+
+    span {
+        display: block;
+        height: 3px;
+        background-color: $white;
+    }
+}
+
+.mobile-menu-close {
+    display: none;
+    border: none;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    color: $white;
+    font-size: 3rem;
+    align-self: flex-end;
+}
+
+@media screen and (max-width: $md) {
+    .menu {
+        padding: 20px;
+        position: fixed;
+        top: 0;
+        left: -100%;
+        width: 100vw;
+        height: 100vh;
+        flex-direction: column;
+        align-items: center;
+        background-image: linear-gradient(45deg, $primary, $secondary);
+
+        .nav {
+            &__menu {
+                flex-direction: column;
+            }
+
+            &__link::before {
+                display: none;
+            }
+        }
+    }
+
+    .burger, .mobile-menu-close {
+        display: flex;
+    }
+}

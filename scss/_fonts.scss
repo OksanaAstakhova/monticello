@@ -1,0 +1,39 @@
+@font-face {
+    font-family: "Open Sans";
+    src: url(../fonts/OpenSansRegular.ttf) format("truetype");
+    font-style: normal;
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: "Open Sans";
+    src: url(../fonts/OpenSans-Italic.ttf) format("truetype");
+    font-style: italic;
+    font-weight: 400;
+}
+
+
+@font-face {
+    font-family: "Gotham";
+    src: url(../fonts/GothamMedium.ttf) format("truetype"),
+        url(../fonts/GothamMedium.woff) format("woff"),
+        url(../fonts/GothamMedium.woff2) format("woff2");
+    font-style: normal;
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: "Gotham";
+    src: url(../fonts/GothamBold.ttf) format("truetype"),
+        url(../fonts/GothamBold.woff) format("woff");
+    font-style: normal;
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: "Gotham Book";
+    src: url(../fonts/GothamBook.otf) format("opentype"),
+        url(../fonts/GothamBook.woff) format("woff");
+    font-style: normal;
+    font-weight: 400;
+}

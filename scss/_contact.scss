@@ -1,0 +1,142 @@
+.contact {
+    display: flex;
+    flex-direction: column;
+}
+
+.map {
+    min-height: 700px;
+    flex-grow: 1;
+    background-color: $dark;
+}
+
+.footer {
+    position: relative;
+    padding: clamp(30px, 150px, 12.5vw) 10px;
+    background-image: url(../img/footer-bg.png),
+        linear-gradient(45deg, $primary, $secondary);
+    background-position: top;
+    background-size: cover;
+    color: $white;
+
+    &__nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 50px;
+    }
+
+    &__copyright {
+        font-family: "Gotham Book";
+        font-size: 0.875rem;
+
+        svg {
+            fill: $white;
+            width: 20px;
+        }
+    }
+
+    &__author {
+        margin-left: 20px;
+        padding-left: 20px;
+        border-left: 1px solid $white;
+    }
+
+    &__inner-wrapper {
+        max-width: 700px;
+        margin: 0 auto;
+    }
+
+    @media screen and (max-width: $sm) {
+        &__nav {
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        &__copyright {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        &__author {
+            margin-left: 0;
+            padding-left: 0;
+            border-left: none;
+        }
+    }
+}
+
+.card {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -75%);
+    padding: clamp(10px, 50px, 4vw);
+    background-image: url(../img/card-bg.png);
+    background-color: $white;
+    background-position: bottom;
+    color: $dark;
+    font-family: "Gotham Book";
+
+    @media screen and (max-width: $sm) {
+        position: static;
+        transform: none;
+        margin-bottom: 30px;
+        }
+
+    &__item {
+        white-space: nowrap;
+        &:not(:last-of-type) {
+            margin-bottom: 40px;
+        }
+    }
+
+    &__wrapper {
+        display: flex;
+        gap: 20px;
+
+        @media screen and (max-width: $md) {
+        flex-wrap: wrap ;
+        }
+    }
+    &__info,
+    form {
+        width: 50%;
+        flex-grow: 1;
+    }
+
+    &__info {
+        width: fit-content;
+        svg {
+            fill: $secondary;
+        }
+    }
+
+    form {
+        min-width: 250px;
+
+        input {
+            width: 100%;
+            display: block;
+            border-top: none;
+            border-left: none;
+            border-right: none;
+            border-bottom: 1px solid $dark;
+            line-height: 2;
+            color: $dark;
+            margin-bottom: 20px;
+
+            &::placeholder {
+                color: $dark;
+            }
+
+            &:placeholder-shown {
+                opacity: 0.6;
+            }
+        }
+
+        .button {
+            @include button;
+            margin-left: auto ;
+        }
+    }
+}

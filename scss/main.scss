@@ -1,0 +1,124 @@
+@import "fonts";
+@import "normalize";
+@import "variables";
+@import "mixins";
+@import "hero";
+@import "header";
+@import "projects";
+@import "modal";
+@import "news";
+@import "gallery";
+@import "contact";
+
+body {
+    font-family: "Open Sans";
+    color: $dark;
+}
+section {
+    min-height: 100vh;
+    position: relative;
+}
+
+.section {
+    padding-top: 60px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+h1 {
+    font-size: clamp(2.5rem, 5.5rem, 7vw);
+}
+
+h1,
+h2 {
+    font-family: "Gotham";
+}
+
+h3,
+h4,
+button {
+    font-family: "Gotham Book";
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+button {
+    text-transform: uppercase;
+}
+
+h3,
+h4 {
+    font-weight: 400;
+    font-size: 1.25rem;
+    font-weight: 400;
+}
+
+h2 {
+    font-size: clamp(1.5rem, 2.75rem, 4vw);
+}
+
+.title {
+    text-align: center;
+    margin-bottom: 60px;
+    position: relative;
+    padding-top: 25px;
+    margin-top: 0;
+
+    &.title--light {
+        color: $white;
+
+        &::before {
+            border-top: 1px solid $white;
+        }
+    }
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100px;
+        border-top: 1px solid $dark;
+    }
+}
+
+.slick-slider {
+    // overflow: hidden;
+    .slick-track {
+        display: flex;
+        min-width: 0;
+    }
+
+    .slick-list {
+        overflow: hidden;
+        width: 100%;
+    }
+}
+
+.slick-dots {
+    position: absolute;
+    gap: 30px;
+    list-style: none;
+    font-size: 0;
+    display: flex;
+
+    button {
+        @include dots;
+        cursor: pointer;
+        transition: all $transition-time;
+
+        &:hover,
+        &:focus {
+            background-color: rgba(255, 255, 255, 0.5);
+        }
+    }
+
+    .slick-active button {
+        background-color: $white;
+    }
+}
